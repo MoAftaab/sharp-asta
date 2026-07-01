@@ -153,47 +153,53 @@ def _llm_classify(message: str) -> str:
 
         # Try Gemini first
         if settings.gemini_api_key:
-            url = (
-                "https://generativelanguage.googleapis.com/v1beta/models/"
-                f"{settings.gemini_model}:generateContent"
-            )
-            payload = {
-                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.0, "maxOutputTokens": 10},
-            }
-            resp = httpx.post(
-                url, params={"key": settings.gemini_api_key},
-                json=payload, timeout=3.0,
-            )
-            resp.raise_for_status()
-            parts = (
-                resp.json().get("candidates", [{}])[0]
-                .get("content", {}).get("parts", [])
-            )
-            result = "".join(p.get("text", "") for p in parts).strip().upper()
-            if result in {"ON_TOPIC", "OFF_TOPIC", "INJECTION", "COMPARISON"}:
-                return result
+            try:
+                url = (
+                    "https://generativelanguage.googleapis.com/v1beta/models/"
+                    f"{settings.gemini_model}:generateContent"
+                )
+                payload = {
+                    "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                    "generationConfig": {"temperature": 0.0, "maxOutputTokens": 10},
+                }
+                resp = httpx.post(
+                    url, params={"key": settings.gemini_api_key},
+                    json=payload, timeout=3.0,
+                )
+                resp.raise_for_status()
+                parts = (
+                    resp.json().get("candidates", [{}])[0]
+                    .get("content", {}).get("parts", [])
+                )
+                result = "".join(p.get("text", "") for p in parts).strip().upper()
+                if result in {"ON_TOPIC", "OFF_TOPIC", "INJECTION", "COMPARISON"}:
+                    return result
+            except Exception as e:
+                logger.warning(f"Gemini guardrail call failed: {e}. Trying Groq...")
 
         # Try Groq
         if settings.groq_api_key:
-            payload_g = {
-                "model": settings.groq_model,
-                "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0.0,
-                "max_tokens": 10,
-            }
-            resp_g = httpx.post(
-                "https://api.groq.com/openai/v1/chat/completions",
-                headers={"Authorization": f"Bearer {settings.groq_api_key}"},
-                json=payload_g, timeout=3.0,
-            )
-            resp_g.raise_for_status()
-            result_g = (
-                resp_g.json().get("choices", [{}])[0]
-                .get("message", {}).get("content", "").strip().upper()
-            )
-            if result_g in {"ON_TOPIC", "OFF_TOPIC", "INJECTION", "COMPARISON"}:
-                return result_g
+            try:
+                payload_g = {
+                    "model": settings.groq_model,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "temperature": 0.0,
+                    "max_tokens": 10,
+                }
+                resp_g = httpx.post(
+                    "https://api.groq.com/openai/v1/chat/completions",
+                    headers={"Authorization": f"Bearer {settings.groq_api_key}"},
+                    json=payload_g, timeout=3.0,
+                )
+                resp_g.raise_for_status()
+                result_g = (
+                    resp_g.json().get("choices", [{}])[0]
+                    .get("message", {}).get("content", "").strip().upper()
+                )
+                if result_g in {"ON_TOPIC", "OFF_TOPIC", "INJECTION", "COMPARISON"}:
+                    return result_g
+            except Exception as e:
+                logger.warning(f"Groq guardrail call failed: {e}")
 
     except Exception:
         pass  # fail open

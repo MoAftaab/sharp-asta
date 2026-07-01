@@ -37,6 +37,8 @@ STOPWORDS = {
     "hire", "hiring", "i", "in", "is", "it", "level", "levels",
     "mid", "need", "of", "on", "or", "our", "that", "the",
     "to", "with", "who", "work", "works",
+    "hello", "hi", "hey", "dear", "deaar", "dearr", "baby", "babt",
+    "u", "you", "wbu", "sup", "there", "how", "whom", "hwo",
 }
 
 VAGUE_TERMS = {"assessment", "test", "tests", "something", "help", "anything", "best", "recommend"}
