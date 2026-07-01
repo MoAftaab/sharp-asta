@@ -1,73 +1,136 @@
-# SHL Conversational Assessment Recommender
+# 🧠 SHL Assessment Recommender — AI-Powered Hiring Intelligence
 
-A full-stack SHL assessment recommender for the AI intern take-home assignment. FastAPI serves both the JSON API and the frontend.
+A production-grade conversational recommender agent built on a stateless **FastAPI** backend and a premium glassmorphic frontend. It leverages a **hybrid FAISS + BM25 retrieval engine** to recommend exact science-backed assessments from the SHL product catalog based on user hiring needs.
 
-## Run Locally
+---
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-copy .env.example .env
-uvicorn app.main:app --reload
-```
+## 🚀 Quick Start
 
-Open `http://127.0.0.1:8000`.
+### Option A: Run with Docker Compose (Recommended)
+This is the easiest way to run the entire stack (including downloading the embeddings model and building search indexes).
+1. Clone the repository and navigate into it:
+   ```bash
+   git clone https://github.com/MoAftaab/sharp-asta.git
+   cd sharp-asta
+   ```
+2. Create a `.env` file from the template:
+   ```bash
+   cp .env.example .env
+   ```
+   *(Optional: Populate `GEMINI_API_KEY` and `GROQ_API_KEY` in `.env` for full LLM polishing).*
+3. Run the container:
+   ```bash
+   docker-compose up --build
+   ```
+4. Access the web interface at [http://localhost:8000](http://localhost:8000).
 
-Put API keys in `.env` when you want LLM-polished replies:
+---
 
-```bash
-GEMINI_API_KEY=your_key
-GROQ_API_KEY=your_key
-LLM_PROVIDER=auto
-```
+### Option B: Local Python Development
+1. Initialize a virtual environment and install dependencies:
+   ```bash
+   python -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   pip install -r requirements.txt
+   ```
+2. Build the FAISS and BM25 search indexes:
+   ```bash
+   python scripts/build_index.py
+   ```
+3. Start the FastAPI development server:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+4. Open your browser to [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-No key is required for recommendations; the deterministic catalog retriever still works.
+---
 
-## API
+## 📡 API Endpoints
 
-```bash
-curl http://127.0.0.1:8000/health
-```
+The API is fully stateless. The conversation history is passed in each request, and no session state is stored on the server.
 
-```bash
-curl -X POST http://127.0.0.1:8000/chat \
-  -H "Content-Type: application/json" \
-  -d "{\"messages\":[{\"role\":\"user\",\"content\":\"Hiring a Java developer who works with stakeholders\"}]}"
-```
+### 1. Health Readiness Check
+*   **Path:** `GET /health`
+*   **Response:**
+    ```json
+    { "status": "ok" }
+    ```
+*   **Status Code:** `200 OK`
 
-Response shape:
+---
 
-```json
-{
-  "reply": "Got it. Here are 5 SHL assessments that best match the role and constraints you shared.",
-  "recommendations": [
+### 2. Conversational Agent Recommendation
+*   **Path:** `POST /chat`
+*   **Headers:** `Content-Type: application/json`
+*   **Request Schema:**
+    ```json
     {
-      "name": "Java 8 (New)",
-      "url": "https://www.shl.com/solutions/products/java-8-new/",
-      "test_type": "K"
+      "messages": [
+        {
+          "role": "user",
+          "content": "I am hiring a Java developer who works with stakeholders."
+        }
+      ]
     }
-  ],
-  "end_of_conversation": false
-}
+    ```
+*   **Response Schema:**
+    ```json
+    {
+      "reply": "Got it. Here are 2 assessments that fit a mid-level Java dev with stakeholder needs.",
+      "recommendations": [
+        {
+          "name": "Core Java",
+          "url": "https://www.shl.com/solutions/products/java/",
+          "test_type": "K"
+        },
+        {
+          "name": "OPQ32r",
+          "url": "https://www.shl.com/solutions/products/opq/",
+          "test_type": "P"
+        }
+      ],
+      "end_of_conversation": false
+    }
+    ```
+*   **Key Fields:**
+    - `reply` (str): Conversational assistant message.
+    - `recommendations` (list): A list of 1 to 10 shortlisted items (empty if gathering context or refusing).
+    - `end_of_conversation` (bool): `true` if a closing intent (e.g. "thank you") was detected, closing inputs.
+
+---
+
+## 🛡️ Core Architecture
+
+```mermaid
+graph TD
+    User([User Request]) --> Guard[Guardrails & Injections Check]
+    Guard -- Off-Topic / Jailbreak --> Refuse[Refuse / Stay in Scope]
+    Guard -- Safe --> Slots[Slot Extraction & Context Check]
+    Slots -- Vague --> Clarify[Ask Clarifying Question]
+    Slots -- Sufficient Context --> Retrieval[FAISS + BM25 RRF Hybrid Search]
+    Retrieval --> Filter[Constraint Filters: Duration & Test Type]
+    Filter --> Rerank[LLM Context Reranking & Polish]
+    Rerank --> Reply[Stateless JSON Response]
 ```
 
-## Workflow
+### 🧠 Hybrid FAISS + BM25 Retrieval
+- **FAISS Semantic Search:** Vectorizes queries using `all-MiniLM-L6-v2` and runs cosine similarity against catalog items.
+- **BM25 Keyword Search:** Exact keyword matches are scored to catch precise programming languages (e.g. "C++", "Java", "SQL").
+- **Reciprocal Rank Fusion (RRF):** Fuses the ranks of semantic search and keyword matches for optimal recall scoring.
+- **Graceful Fallback:** If indices are not built, fallbacks to rule-based token mapping immediately.
 
-1. Data: start with `data/catalog.json`, or run `python scripts/scrape_catalog.py` and review the scraped output before replacing the catalog.
-2. Backend: `app/main.py` exposes `/health`, `/chat`, and the frontend.
-3. Agent: `app/agent.py` controls guardrails, clarification, comparison, retrieval, and schema validation.
-4. Frontend: `frontend/index.html`, `frontend/styles.css`, and `frontend/app.js` call `/chat` with the full stateless message history.
-5. Tests: run `pytest`.
-6. Evaluation: run `python scripts/evaluate.py --traces data/public_traces.json` while the server is running.
-7. Deploy: push to GitHub, connect Render, and set `GEMINI_API_KEY` and `GROQ_API_KEY` in the dashboard.
+---
 
-## Deploy With Docker
+## ☁️ Deploing on Render
 
-```bash
-docker build -t shl-assessment-recommender .
-docker run -p 8000:8000 --env-file .env shl-assessment-recommender
-```
+This repository is ready to deploy directly on **Render** using Docker.
 
-Render can use the included `render.yaml`.
-
+1. **Create a Web Service on Render:**
+   - Connect your GitHub repository.
+   - Select **Docker** as the Runtime.
+2. **Environment Variables:**
+   Add these in your Render Dashboard:
+   - `GEMINI_API_KEY`: Your Google Gemini API Key.
+   - `GROQ_API_KEY`: Your Groq API Key.
+   - `LLM_PROVIDER`: `auto` (detects and prioritizes active LLM API Keys).
+3. **Deploy:** Render will automatically build the Dockerfile, pre-download the embedding models, build the FAISS index at build-time, and host your service.
