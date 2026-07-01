@@ -99,38 +99,33 @@ The API is fully stateless. The conversation history is passed in each request, 
 
 ---
 
-## 🛡️ Core Architecture
+## 🛠️ Technical Design & Decisions
 
-```mermaid
-graph TD
-    User([User Request]) --> Guard[Guardrails & Injections Check]
-    Guard -- Off-Topic / Jailbreak --> Refuse[Refuse / Stay in Scope]
-    Guard -- Safe --> Slots[Slot Extraction & Context Check]
-    Slots -- Vague --> Clarify[Ask Clarifying Question]
-    Slots -- Sufficient Context --> Retrieval[FAISS + BM25 RRF Hybrid Search]
-    Retrieval --> Filter[Constraint Filters: Duration & Test Type]
-    Filter --> Rerank[LLM Context Reranking & Polish]
-    Rerank --> Reply[Stateless JSON Response]
-```
+This section details the architecture choices implemented in the agent and retrieval stack to maximize **recall**, ensure **robustness**, and stay within **evaluator constraints**.
 
-### 🧠 Hybrid FAISS + BM25 Retrieval
-- **FAISS Semantic Search:** Vectorizes queries using `all-MiniLM-L6-v2` and runs cosine similarity against catalog items.
-- **BM25 Keyword Search:** Exact keyword matches are scored to catch precise programming languages (e.g. "C++", "Java", "SQL").
-- **Reciprocal Rank Fusion (RRF):** Fuses the ranks of semantic search and keyword matches for optimal recall scoring.
-- **Graceful Fallback:** If indices are not built, fallbacks to rule-based token mapping immediately.
+### 1. Stateless FSM & Context Management
+*   **Design Choice:** The FastAPI service is fully stateless. On every `POST /chat` request, the agent parses the *entire* conversation history to extract criteria slots (roles, seniority, skills, test types, duration limits).
+*   **Why?** In a multi-turn chat, users may introduce corrections or add constraints out of order (e.g., *"Actually, keep them under 45 minutes"*). Re-evaluating the entire history at each turn guarantees that the agent adapts dynamically to refinements instead of locking onto outdated states.
 
----
+### 2. Hybrid Retrieval Engine (FAISS + BM25 + RRF)
+*   **FAISS Dense Search:** Matches semantic context (e.g. mapping "works with stakeholders" to the `OPQ32r` behavioral test based on description embeddings).
+*   **BM25 Sparse Search:** Captures exact token matches (e.g. catching "Java", "C++", "SQL" which dense vectors might dilute).
+*   **Reciprocal Rank Fusion (RRF):** Fuses the rankings from FAISS and BM25 using the standard formula:
+    $$RRF(d) = \sum_{m \in M} \frac{1}{60 + r_m(d)}$$
+    This balances semantic understanding with keyword precision, maximizing the **Recall@10** score on both vague and targeted queries.
 
-## ☁️ Deploing on Render
+### 3. Turn-Cap Refusal Safeguard
+*   **Design Choice:** The automated evaluator caps conversations at 8 turns.
+*   **Why?** If the conversation reaches Turn 7 and the user is still vague (or the agent has not committed to a shortlist), the FSM triggers a `must_answer` flag. This overrides the context gathering phase and forces a best-guess shortlist. This guarantees the agent never exceeds the 8-turn cap without presenting recommendations.
 
-This repository is ready to deploy directly on **Render** using Docker.
+### 4. Consolidated URL Mapping (Anti-404 Guard)
+*   **Design Choice:** Retired or legacy URLs in the catalog that return 404 (such as old sub-pages for specific Kenexa skills tests) are mapped to `https://www.shl.com/solutions/products/product-catalog/` or their respective consolidated page (e.g. `/opq/`, `/verify/`).
+*   **Why?** This prevents broken links in the web UI when candidates click on cards, while strictly abiding by the PRD whitelist guardrail preventing hallucinated links.
 
-1. **Create a Web Service on Render:**
-   - Connect your GitHub repository.
-   - Select **Docker** as the Runtime.
-2. **Environment Variables:**
-   Add these in your Render Dashboard:
-   - `GEMINI_API_KEY`: Your Google Gemini API Key.
-   - `GROQ_API_KEY`: Your Groq API Key.
-   - `LLM_PROVIDER`: `auto` (detects and prioritizes active LLM API Keys).
-3. **Deploy:** Render will automatically build the Dockerfile, pre-download the embedding models, build the FAISS index at build-time, and host your service.
+### 5. Multi-Layer Guardrails & Refusal
+*   **Design Choice:** Unrelated requests (recipes, salary, GDPR, weather) are checked first using regex lists (low latency) and verified by a secondary LLM check.
+*   **Why?** Ensures immediate refusals for off-topic prompts or jailbreak attempts without wasting LLM tokens or introducing request latency.
+
+### 6. Lifespan Pre-Warming
+*   **Design Choice:** The `lifespan` manager in `app/main.py` warms up the sentence-transformers model and loads the FAISS index during FastAPI startup.
+*   **Why?** Eliminates lazy loading latencies on the first user message, ensuring all requests complete well under the 30-second evaluator timeout.
