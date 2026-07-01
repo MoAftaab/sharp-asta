@@ -1,0 +1,80 @@
+[
+  {
+    "id": "java_developer_mid",
+    "conversation": [
+      {"role": "user", "content": "I am hiring a Java developer who works with stakeholders"},
+      {"role": "assistant", "content": "What seniority level are you targeting — entry, mid, or senior?"},
+      {"role": "user", "content": "Mid-level, around 4 years of experience"}
+    ],
+    "expected_shortlist": ["Java 8 (New)", "Core Java", "OPQ32r"]
+  },
+  {
+    "id": "data_analyst_time_limit",
+    "conversation": [
+      {"role": "user", "content": "I need assessments for a data analyst role. Tests must be under 45 minutes."}
+    ],
+    "expected_shortlist": ["Data Analysis", "Verify Numerical Reasoning", "SQL (New)"]
+  },
+  {
+    "id": "vague_then_python_developer",
+    "conversation": [
+      {"role": "user", "content": "I need an assessment"},
+      {"role": "assistant", "content": "What role are you hiring for, and which skills, seniority level, or time limits matter most?"},
+      {"role": "user", "content": "A Python developer who also knows SQL and data engineering"}
+    ],
+    "expected_shortlist": ["Python (New)", "SQL (New)", "Data Analysis"]
+  },
+  {
+    "id": "sales_manager_leadership",
+    "conversation": [
+      {"role": "user", "content": "Looking for assessments for a sales manager who needs strong leadership and customer-facing skills"}
+    ],
+    "expected_shortlist": ["Sales Manager Solution", "OPQ32r", "Entry-Level Sales"]
+  },
+  {
+    "id": "frontend_developer_react",
+    "conversation": [
+      {"role": "user", "content": "Hiring a frontend developer with React and JavaScript skills, mid-level"}
+    ],
+    "expected_shortlist": ["JavaScript (New)", "React JS"]
+  },
+  {
+    "id": "graduate_entry_level",
+    "conversation": [
+      {"role": "user", "content": "We need assessments for graduate entry-level positions"},
+      {"role": "assistant", "content": "What type of roles are you hiring graduates for?"},
+      {"role": "user", "content": "General business analyst and analytical thinking roles"}
+    ],
+    "expected_shortlist": ["Graduate Potential Assessment", "Verify G+", "Verify Numerical Reasoning"]
+  },
+  {
+    "id": "contact_center_agent",
+    "conversation": [
+      {"role": "user", "content": "We are hiring customer service agents for our call center. Need remote-compatible tests."}
+    ],
+    "expected_shortlist": ["Customer Contact - Styles", "Contact Center Solution"]
+  },
+  {
+    "id": "financial_analyst_numerical",
+    "conversation": [
+      {"role": "user", "content": "Need assessments for a financial analyst role — strong focus on numerical reasoning and accounting knowledge"}
+    ],
+    "expected_shortlist": ["Financial Accounting", "Verify Numerical Reasoning", "Data Analysis"]
+  },
+  {
+    "id": "refinement_adds_personality",
+    "conversation": [
+      {"role": "user", "content": "Hiring a data analyst"},
+      {"role": "assistant", "content": "Here are some SHL assessments for a data analyst: Data Analysis, SQL (New), Verify Numerical Reasoning."},
+      {"role": "user", "content": "Actually also add personality tests and remove any that take more than 45 minutes"}
+    ],
+    "expected_shortlist": ["OPQ32r", "Data Analysis", "SQL (New)", "Verify Numerical Reasoning"]
+  },
+  {
+    "id": "devops_engineer_cloud",
+    "conversation": [
+      {"role": "user", "content": "Looking for assessments for a DevOps engineer who works with Docker, Kubernetes, and AWS"}
+    ],
+    "expected_shortlist": ["Docker", "Kubernetes", "AWS"]
+  }
+]

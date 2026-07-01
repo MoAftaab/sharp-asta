@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SHL Assessment Recommender — AI-Powered Hiring Intelligence</title>
+    <meta name="description" content="AI-powered SHL assessment recommender. Describe a role and get instant, accurate catalog recommendations tailored to your hiring needs." />
+    <meta name="theme-color" content="#0b0e1a" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+
+      <!-- ── Chat pane ─────────────────────────────────────────────────── -->
+      <section class="chat-pane" aria-label="Conversation">
+
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">SHL Intelligence</p>
+            <h1>Assessment Recommender</h1>
+          </div>
+          <div class="status" id="healthStatus" role="status" aria-live="polite">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Checking…</span>
+          </div>
+        </header>
+
+        <div class="quick-row" aria-label="Example prompts">
+          <button class="quick-chip" type="button"
+            data-prompt="Hiring a mid-level Java developer who works closely with stakeholders">
+            ☕ Java developer
+          </button>
+          <button class="quick-chip" type="button"
+            data-prompt="I need assessments for a data analyst under 45 minutes">
+            📊 Data analyst
+          </button>
+          <button class="quick-chip" type="button"
+            data-prompt="Compare OPQ32r and Verify Numerical Reasoning">
+            ⚖️ Compare tests
+          </button>
+          <button class="quick-chip" type="button"
+            data-prompt="Sales manager with leadership and customer-facing skills">
+            🚀 Sales manager
+          </button>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite">
+          <article class="message assistant">
+            <div class="avatar" aria-hidden="true">A</div>
+            <div class="bubble">
+              Hello! Tell me the <strong>role</strong>, required <strong>skills</strong>,
+              <strong>seniority</strong>, or any time constraints — I'll find the best SHL
+              catalog assessments for you.
+            </div>
+          </article>
+        </div>
+
+        <form class="composer" id="chatForm" aria-label="Message composer">
+          <textarea
+            id="messageInput"
+            name="message"
+            rows="1"
+            placeholder="Describe the role or paste a short job description…"
+            autocomplete="off"
+            aria-label="Message input"
+          ></textarea>
+          <button class="send-button" id="sendButton" type="submit"
+                  title="Send message" aria-label="Send message">
+            <span aria-hidden="true">Send ↑</span>
+          </button>
+        </form>
+
+      </section>
+
+      <!-- ── Results pane ──────────────────────────────────────────────── -->
+      <aside class="results-pane" aria-label="Recommendations">
+
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Catalog Shortlist</p>
+            <h2>Recommendations</h2>
+          </div>
+          <button class="clear-button" id="clearButton" type="button"
+                  aria-label="Clear conversation and recommendations">
+            ✕ Clear
+          </button>
+        </div>
+
+        <div class="summary-strip" aria-label="Session statistics">
+          <div>
+            <span class="metric" id="turnCount" aria-label="Number of turns">0</span>
+            <span class="metric-label">Turns</span>
+          </div>
+          <div>
+            <span class="metric" id="recCount" aria-label="Number of matches">0</span>
+            <span class="metric-label">Matches</span>
+          </div>
+        </div>
+
+        <div class="recommendations" id="recommendations">
+          <div class="empty-state" aria-live="polite">
+            ✦ Recommendations appear here once the agent has enough role context.
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+
+    <script src="/static/app.js" type="module"></script>
+  </body>
+</html>

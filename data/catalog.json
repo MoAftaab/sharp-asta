@@ -1,0 +1,1669 @@
+[
+  {
+    "name": "OPQ32r",
+    "url": "https://www.shl.com/solutions/products/opq/",
+    "test_types": [
+      "P"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Measures workplace personality preferences and behavioral style for role fit, leadership potential, collaboration, and culture alignment.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager",
+      "Executive"
+    ],
+    "keywords": [
+      "opq",
+      "personality",
+      "behavior",
+      "leadership",
+      "culture",
+      "collaboration",
+      "stakeholder",
+      "management"
+    ]
+  },
+  {
+    "name": "Motivation Questionnaire (MQ)",
+    "url": "https://www.shl.com/solutions/products/motivation/",
+    "test_types": [
+      "P"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses work motivators, drivers, engagement risks, and environmental preferences.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "motivation",
+      "values",
+      "engagement",
+      "drivers",
+      "personality",
+      "culture"
+    ]
+  },
+  {
+    "name": "Verify G+",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": true,
+    "description": "A general ability assessment covering numerical, deductive, and inductive reasoning for broad cognitive screening.",
+    "duration_minutes": 36,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "g+",
+      "gsa",
+      "general ability",
+      "cognitive",
+      "reasoning",
+      "graduate",
+      "problem solving"
+    ]
+  },
+  {
+    "name": "Verify Numerical Reasoning",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": true,
+    "description": "Measures the ability to interpret numerical data, tables, charts, and quantitative business information.",
+    "duration_minutes": 18,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "numerical",
+      "data",
+      "finance",
+      "analytics",
+      "quantitative",
+      "tables",
+      "charts"
+    ]
+  },
+  {
+    "name": "Verify Verbal Reasoning",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": true,
+    "description": "Measures understanding and evaluation of written business information.",
+    "duration_minutes": 17,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "verbal",
+      "reading",
+      "communication",
+      "language",
+      "business writing",
+      "comprehension"
+    ]
+  },
+  {
+    "name": "Verify Inductive Reasoning",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": true,
+    "description": "Assesses abstract pattern recognition and the ability to infer rules from unfamiliar information.",
+    "duration_minutes": 18,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "inductive",
+      "abstract",
+      "logical",
+      "patterns",
+      "problem solving"
+    ]
+  },
+  {
+    "name": "Verify Deductive Reasoning",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": true,
+    "description": "Assesses logical reasoning, argument evaluation, and drawing valid conclusions from rules.",
+    "duration_minutes": 18,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "deductive",
+      "logical",
+      "critical thinking",
+      "reasoning",
+      "rules"
+    ]
+  },
+  {
+    "name": "Verify Checking",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Measures speed and accuracy when checking information for errors.",
+    "duration_minutes": 10,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "checking",
+      "accuracy",
+      "attention to detail",
+      "clerical",
+      "administrative"
+    ]
+  },
+  {
+    "name": "Verify Mechanical Comprehension",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Measures understanding of basic mechanical principles for technical, engineering, and maintenance roles.",
+    "duration_minutes": 15,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "mechanical",
+      "engineering",
+      "maintenance",
+      "technical",
+      "physics"
+    ]
+  },
+  {
+    "name": "Verify Calculation",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Measures basic numerical calculation accuracy for operational and administrative roles.",
+    "duration_minutes": 10,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "calculation",
+      "math",
+      "numeracy",
+      "clerical",
+      "finance"
+    ]
+  },
+  {
+    "name": "Verify Reading Comprehension",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Measures ability to understand instructions, policies, and workplace written materials.",
+    "duration_minutes": 15,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "reading",
+      "comprehension",
+      "instructions",
+      "verbal",
+      "communication"
+    ]
+  },
+  {
+    "name": "Graduate Potential Assessment",
+    "url": "https://www.shl.com/solutions/products/verify/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": true,
+    "description": "Evaluates early-career potential through reasoning and workplace preference indicators.",
+    "duration_minutes": 40,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry"
+    ],
+    "keywords": [
+      "graduate",
+      "entry level",
+      "early career",
+      "potential",
+      "cognitive",
+      "reasoning"
+    ]
+  },
+  {
+    "name": "Situational Judgment Test - Managerial",
+    "url": "https://www.shl.com/solutions/products/situational-judgment/",
+    "test_types": [
+      "B"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Presents realistic management scenarios to assess judgment, prioritization, and people decisions.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Manager"
+    ],
+    "keywords": [
+      "situational judgment",
+      "sjt",
+      "manager",
+      "leadership",
+      "decision making",
+      "people management"
+    ]
+  },
+  {
+    "name": "Situational Judgment Test - Customer Service",
+    "url": "https://www.shl.com/solutions/products/situational-judgment/",
+    "test_types": [
+      "B"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses customer service judgment using realistic service interactions and conflict scenarios.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "situational judgment",
+      "customer service",
+      "support",
+      "contact center",
+      "call center",
+      "conflict"
+    ]
+  },
+  {
+    "name": "Situational Judgment Test - Sales",
+    "url": "https://www.shl.com/solutions/products/situational-judgment/",
+    "test_types": [
+      "B"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses sales judgment, customer handling, and commercial decision making.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "situational judgment",
+      "sales",
+      "customer",
+      "commercial",
+      "revenue"
+    ]
+  },
+  {
+    "name": "Workplace Safety SJT",
+    "url": "https://www.shl.com/solutions/products/situational-judgment/",
+    "test_types": [
+      "B"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses judgment in practical workplace safety and operational risk scenarios.",
+    "duration_minutes": 20,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "safety",
+      "operations",
+      "manufacturing",
+      "risk",
+      "situational judgment"
+    ]
+  },
+  {
+    "name": "Java 8 (New)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Evaluates Java 8 knowledge including object-oriented programming, lambdas, streams, collections, and exception handling.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "java",
+      "java 8",
+      "programming",
+      "backend",
+      "software developer",
+      "oop",
+      "streams"
+    ]
+  },
+  {
+    "name": "Core Java",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses foundational Java programming concepts for software engineering roles.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "java",
+      "core java",
+      "programming",
+      "backend",
+      "developer",
+      "oop"
+    ]
+  },
+  {
+    "name": "Python (New)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Evaluates Python programming knowledge for scripting, backend development, automation, and data work.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "python",
+      "programming",
+      "scripting",
+      "backend",
+      "data science",
+      "automation"
+    ]
+  },
+  {
+    "name": "JavaScript (New)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Evaluates JavaScript language knowledge for frontend and full-stack development.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "javascript",
+      "frontend",
+      "web",
+      "node",
+      "programming",
+      "developer"
+    ]
+  },
+  {
+    "name": "SQL (New)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses SQL querying, joins, aggregation, database concepts, and data manipulation.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "sql",
+      "database",
+      "query",
+      "data",
+      "analytics",
+      "joins",
+      "reporting"
+    ]
+  },
+  {
+    "name": "C# (New)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Evaluates C# programming knowledge for Microsoft application development.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      "c#",
+      "csharp",
+      "dotnet",
+      "programming",
+      "microsoft",
+      "backend"
+    ]
+  },
+  {
+    "name": ".NET Framework",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses Microsoft .NET framework concepts for backend and enterprise application development.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      ".net",
+      "dotnet",
+      "csharp",
+      "microsoft",
+      "backend",
+      "software developer"
+    ]
+  },
+  {
+    "name": "C++ Programming",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Evaluates C++ language knowledge, memory management, and object-oriented programming.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      "c++",
+      "cpp",
+      "programming",
+      "software developer",
+      "systems",
+      "oop"
+    ]
+  },
+  {
+    "name": "React JS",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses React component design, state management, hooks, and frontend development fundamentals.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "react",
+      "react js",
+      "javascript",
+      "frontend",
+      "ui",
+      "web developer",
+      "hooks"
+    ]
+  },
+  {
+    "name": "Angular",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses Angular, TypeScript, components, services, and frontend application concepts.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "angular",
+      "typescript",
+      "javascript",
+      "frontend",
+      "web developer"
+    ]
+  },
+  {
+    "name": "Node.js",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses server-side JavaScript, APIs, asynchronous programming, and Node.js runtime concepts.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      "node",
+      "node.js",
+      "javascript",
+      "backend",
+      "api",
+      "server"
+    ]
+  },
+  {
+    "name": "HTML/CSS (New)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Evaluates web markup, styling, layout, responsive design, and browser fundamentals.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "html",
+      "css",
+      "frontend",
+      "web",
+      "responsive",
+      "ui"
+    ]
+  },
+  {
+    "name": "AWS",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses Amazon Web Services concepts for cloud infrastructure and application deployment.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "aws",
+      "cloud",
+      "devops",
+      "infrastructure",
+      "deployment"
+    ]
+  },
+  {
+    "name": "Microsoft Azure",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses Azure cloud services, infrastructure concepts, identity, storage, and deployment.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "azure",
+      "cloud",
+      "microsoft",
+      "devops",
+      "infrastructure"
+    ]
+  },
+  {
+    "name": "Docker",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses containerization concepts, images, Dockerfiles, registries, and runtime behavior.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      "docker",
+      "containers",
+      "devops",
+      "infrastructure",
+      "deployment"
+    ]
+  },
+  {
+    "name": "Kubernetes",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses Kubernetes orchestration concepts including pods, services, deployments, and scaling.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "kubernetes",
+      "k8s",
+      "containers",
+      "devops",
+      "cloud",
+      "orchestration"
+    ]
+  },
+  {
+    "name": "DevOps Concepts",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses CI/CD, release automation, infrastructure concepts, monitoring, and deployment practices.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "devops",
+      "ci/cd",
+      "deployment",
+      "automation",
+      "cloud",
+      "infrastructure"
+    ]
+  },
+  {
+    "name": "Git",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses version control concepts, branching, merging, and common Git workflows.",
+    "duration_minutes": 20,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "git",
+      "version control",
+      "software developer",
+      "branching",
+      "merge"
+    ]
+  },
+  {
+    "name": "Agile (New)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Evaluates Agile delivery knowledge, Scrum concepts, ceremonies, and iterative planning.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "agile",
+      "scrum",
+      "project management",
+      "delivery",
+      "product",
+      "stakeholder"
+    ]
+  },
+  {
+    "name": "Scrum Master",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses Scrum framework knowledge, facilitation, sprint planning, and team delivery practices.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "scrum",
+      "agile",
+      "scrum master",
+      "facilitation",
+      "delivery"
+    ]
+  },
+  {
+    "name": "Business Analyst",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses requirements analysis, stakeholder communication, process mapping, and business problem solving.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "business analyst",
+      "requirements",
+      "stakeholder",
+      "communication",
+      "process",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Data Analysis",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses data interpretation, reporting, basic statistics, spreadsheet analysis, and business insight generation.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "data analyst",
+      "data",
+      "analytics",
+      "reporting",
+      "statistics",
+      "excel",
+      "insights"
+    ]
+  },
+  {
+    "name": "Data Science",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses data science concepts including statistics, Python workflows, modeling, and feature analysis.",
+    "duration_minutes": 45,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      "data science",
+      "python",
+      "machine learning",
+      "statistics",
+      "modeling",
+      "analytics"
+    ]
+  },
+  {
+    "name": "Machine Learning",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses machine learning fundamentals, algorithms, model evaluation, and applied data science concepts.",
+    "duration_minutes": 45,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      "machine learning",
+      "ml",
+      "data science",
+      "modeling",
+      "algorithms",
+      "python"
+    ]
+  },
+  {
+    "name": "Microsoft Excel",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses spreadsheet formulas, formatting, charts, pivot tables, and data manipulation in Excel.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "excel",
+      "spreadsheet",
+      "pivot tables",
+      "reporting",
+      "data analysis",
+      "finance"
+    ]
+  },
+  {
+    "name": "Power BI",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses dashboarding, data modeling, DAX basics, and business intelligence reporting in Power BI.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      "power bi",
+      "business intelligence",
+      "dashboard",
+      "reporting",
+      "data analyst"
+    ]
+  },
+  {
+    "name": "Financial Accounting",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses financial accounting principles, statements, journal entries, and reporting concepts.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "accounting",
+      "finance",
+      "financial",
+      "journal entries",
+      "statements"
+    ]
+  },
+  {
+    "name": "Accounts Payable",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses invoice processing, payables workflows, reconciliation, and accounting operations.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "accounts payable",
+      "accounting",
+      "invoice",
+      "finance",
+      "reconciliation"
+    ]
+  },
+  {
+    "name": "Bookkeeping",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses bookkeeping accuracy, ledger concepts, basic accounting, and transaction recording.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "bookkeeping",
+      "accounting",
+      "ledger",
+      "finance",
+      "transactions"
+    ]
+  },
+  {
+    "name": "Entry-Level Sales",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses practical sales knowledge, customer handling, prospecting, and basic commercial awareness.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry"
+    ],
+    "keywords": [
+      "sales",
+      "entry level",
+      "customer",
+      "prospecting",
+      "commercial"
+    ]
+  },
+  {
+    "name": "Sales Professional",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses consultative selling, pipeline management, customer needs analysis, and negotiation concepts.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      "sales",
+      "account executive",
+      "negotiation",
+      "customer",
+      "pipeline",
+      "revenue"
+    ]
+  },
+  {
+    "name": "Sales Manager Solution",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "E"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assessment exercises for sales management capability, coaching, commercial judgment, and leadership.",
+    "duration_minutes": 60,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Manager"
+    ],
+    "keywords": [
+      "sales manager",
+      "sales management",
+      "leadership",
+      "assessment exercise",
+      "coaching"
+    ]
+  },
+  {
+    "name": "Customer Contact - Styles",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "S"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Interactive assessment of customer contact style, service orientation, and response patterns.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "customer service",
+      "contact center",
+      "call center",
+      "support",
+      "simulation",
+      "service"
+    ]
+  },
+  {
+    "name": "Contact Center Simulation",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "S"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Simulation of contact center tasks including customer responses, multitasking, and service decision making.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "contact center",
+      "call center",
+      "customer service",
+      "support",
+      "simulation",
+      "multitasking"
+    ]
+  },
+  {
+    "name": "Cashier (Interactive)",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "S"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Interactive retail cashier assessment covering customer interaction, accuracy, and transaction handling.",
+    "duration_minutes": 20,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry"
+    ],
+    "keywords": [
+      "cashier",
+      "retail",
+      "customer",
+      "transaction",
+      "simulation",
+      "service"
+    ]
+  },
+  {
+    "name": "Administrative Professional",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses administrative knowledge, office workflows, organization, written communication, and clerical accuracy.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "administrative",
+      "admin",
+      "office",
+      "clerical",
+      "organization",
+      "communication"
+    ]
+  },
+  {
+    "name": "Microsoft Office",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses common Microsoft Office skills across documents, spreadsheets, presentations, and productivity workflows.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "microsoft office",
+      "word",
+      "excel",
+      "powerpoint",
+      "administrative",
+      "office"
+    ]
+  },
+  {
+    "name": "Typing and Data Entry",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Measures typing speed, data entry accuracy, and clerical throughput.",
+    "duration_minutes": 15,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry"
+    ],
+    "keywords": [
+      "typing",
+      "data entry",
+      "clerical",
+      "accuracy",
+      "administrative"
+    ]
+  },
+  {
+    "name": "Attention to Detail",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "A"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses careful review of information, error detection, and accuracy under time pressure.",
+    "duration_minutes": 15,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "attention to detail",
+      "accuracy",
+      "checking",
+      "clerical",
+      "quality"
+    ]
+  },
+  {
+    "name": "360 Degree Feedback",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "D"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Supports employee development through multi-rater feedback on workplace behaviors and leadership capabilities.",
+    "duration_minutes": 45,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager",
+      "Executive"
+    ],
+    "keywords": [
+      "360",
+      "feedback",
+      "development",
+      "leadership",
+      "manager",
+      "performance"
+    ]
+  },
+  {
+    "name": "Leadership Potential",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "C"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses leadership competencies, influence, decision quality, collaboration, and people orientation.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional",
+      "Manager",
+      "Executive"
+    ],
+    "keywords": [
+      "leadership",
+      "competency",
+      "manager",
+      "influence",
+      "people",
+      "collaboration"
+    ]
+  },
+  {
+    "name": "Management Scenarios",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "E"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assessment exercises using realistic management situations to evaluate judgment, planning, and people leadership.",
+    "duration_minutes": 50,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Manager"
+    ],
+    "keywords": [
+      "management",
+      "assessment exercise",
+      "leadership",
+      "planning",
+      "decision making"
+    ]
+  },
+  {
+    "name": "Remote Work Readiness",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "P"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses preferences and behaviors linked to effective remote work, collaboration, self-direction, and communication.",
+    "duration_minutes": 20,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional",
+      "Manager"
+    ],
+    "keywords": [
+      "remote",
+      "remote work",
+      "collaboration",
+      "communication",
+      "self direction",
+      "personality"
+    ]
+  },
+  {
+    "name": "Technology Professional",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Broad technical assessment for IT professionals covering software, systems, problem solving, and delivery concepts.",
+    "duration_minutes": 40,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Professional"
+    ],
+    "keywords": [
+      "technology",
+      "it professional",
+      "software",
+      "technical",
+      "developer",
+      "systems"
+    ]
+  },
+  {
+    "name": "QA Testing",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses software testing concepts including test cases, defects, regression testing, and quality processes.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "qa",
+      "quality assurance",
+      "testing",
+      "software",
+      "defects",
+      "regression"
+    ]
+  },
+  {
+    "name": "Cybersecurity Fundamentals",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses security concepts, risk, access control, network security, and incident awareness.",
+    "duration_minutes": 35,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "cybersecurity",
+      "security",
+      "network",
+      "risk",
+      "access control",
+      "it"
+    ]
+  },
+  {
+    "name": "Networking Fundamentals",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "K"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses networking basics, protocols, troubleshooting, routing concepts, and infrastructure fundamentals.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "networking",
+      "network",
+      "infrastructure",
+      "it",
+      "protocols",
+      "troubleshooting"
+    ]
+  },
+  {
+    "name": "Retail Associate",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "S"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Simulation-style retail assessment covering customer interaction, reliability, sales behavior, and service judgment.",
+    "duration_minutes": 25,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry"
+    ],
+    "keywords": [
+      "retail",
+      "associate",
+      "customer",
+      "sales",
+      "service",
+      "simulation"
+    ]
+  },
+  {
+    "name": "Call Center Representative",
+    "url": "https://www.shl.com/solutions/products/product-catalog/",
+    "test_types": [
+      "S"
+    ],
+    "remote_testing": true,
+    "adaptive_irt": false,
+    "description": "Assesses call center multitasking, customer responses, service quality, and contact handling.",
+    "duration_minutes": 30,
+    "languages": [
+      "English"
+    ],
+    "job_levels": [
+      "Entry",
+      "Professional"
+    ],
+    "keywords": [
+      "call center",
+      "contact center",
+      "customer service",
+      "support",
+      "simulation"
+    ]
+  }
+]
