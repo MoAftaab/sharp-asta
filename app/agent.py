@@ -27,8 +27,9 @@ logger = logging.getLogger(__name__)
 
 # ── Canned refusal replies ────────────────────────────────────────────────────
 REFUSAL = (
-    "I can only help with SHL assessment selection. Tell me the role, skills, "
-    "seniority, and any constraints, and I can recommend catalog assessments."
+    "Sorry, I can't help with that — I'm only able to assist with selecting "
+    "SHL assessments for hiring. Tell me the role, skills, seniority, or any "
+    "constraints, and I'll recommend assessments from the SHL catalog."
 )
 INJECTION_REFUSAL = (
     "I cannot follow instructions that try to override the assessment-selection task. "
@@ -48,12 +49,32 @@ def _latest_user(messages: list[ChatMessage]) -> str:
     return next((m.content for m in reversed(messages) if m.role == "user"), "")
 
 
+# Words that signal the user still wants more work done, even alongside thanks
+# (e.g. "thanks, now also add personality tests"). If any are present we do NOT
+# treat the message as a conversation-ending DONE signal.
+_CONTINUATION_MARKERS = frozenset([
+    "also", "add", "now", "but", "however", "can you", "could you", "what about",
+    "and ", "?", "instead", "another", "more", "additionally", "plus", "under",
+    "compare", "remove", "swap", "change", "replace",
+])
+
+
 def _is_done_signal(text: str, turn_count: int) -> bool:
-    """Only treat short positive messages as DONE after at least 2 prior turns."""
+    """
+    Treat a message as DONE only when it is a SHORT, purely-positive closing
+    remark after at least 2 prior turns. A message that also asks for more work
+    (contains a continuation marker) is never a DONE signal, so follow-up
+    requests like "perfect, now also add personality tests" are not dropped.
+    """
     if turn_count < 2:
         return False
     lower = text.strip().lower()
-    return any(sig in lower for sig in _DONE_SIGNALS)
+    if not any(sig in lower for sig in _DONE_SIGNALS):
+        return False
+    if any(marker in lower for marker in _CONTINUATION_MARKERS):
+        return False
+    # Guard against long messages that merely happen to contain a thanks phrase.
+    return len(lower.split()) <= 6
 
 
 def _clarifying_question(message_count: int) -> str:
