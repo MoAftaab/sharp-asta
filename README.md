@@ -118,13 +118,13 @@ This section details the architecture choices implemented in the agent and retri
 *   **Design Choice:** The automated evaluator caps conversations at 8 turns.
 *   **Why?** If the conversation reaches Turn 7 and the user is still vague (or the agent has not committed to a shortlist), the FSM triggers a `must_answer` flag. This overrides the context gathering phase and forces a best-guess shortlist. This guarantees the agent never exceeds the 8-turn cap without presenting recommendations.
 
-### 4. Consolidated URL Mapping (Anti-404 Guard)
-*   **Design Choice:** Retired or legacy URLs in the catalog that return 404 (such as old sub-pages for specific Kenexa skills tests) are mapped to `https://www.shl.com/solutions/products/product-catalog/` or their respective consolidated page (e.g. `/opq/`, `/verify/`).
-*   **Why?** This prevents broken links in the web UI when candidates click on cards, while strictly abiding by the PRD whitelist guardrail preventing hallucinated links.
+### 4. Live URL Normalisation (Anti-404 Guard)
+*   **Design Choice:** Every assessment URL is normalised at catalog load time (`app/catalog.py:canonical_url`) to a **verified-live** SHL page chosen by the item's primary test type (e.g. Personality → `/assessments/personality-assessment/`, Ability → `/assessments/cognitive-assessments/`, Knowledge/Simulations → `/assessments/skills-and-simulations/`), with the public product catalog as the catch-all fallback.
+*   **Why?** The older per-product SHL URLs (`/products/opq/`, `/products/verify/`, `/products/situational-judgment/`, `/products/motivation/`) now return **404**. Routing by test type to pages that actually resolve keeps every recommendation card clickable while strictly abiding by the PRD whitelist guardrail against hallucinated links. De-duplication of the shortlist is done by assessment **name** (not URL), so items that share a category page are never silently dropped.
 
 ### 5. Multi-Layer Guardrails & Refusal
-*   **Design Choice:** Unrelated requests (recipes, salary, GDPR, weather) are checked first using regex lists (low latency) and verified by a secondary LLM check.
-*   **Why?** Ensures immediate refusals for off-topic prompts or jailbreak attempts without wasting LLM tokens or introducing request latency.
+*   **Design Choice:** Unrelated requests (jokes, poems, recipes, sports, general knowledge, salary, GDPR, weather, arithmetic, translation, etc.) are caught **immediately** by an expanded set of intent regexes and keyword lists in `app/guardrails.py`, ahead of the on-topic accept step so an off-topic request is refused even if it mentions a tech keyword. Genuinely ambiguous messages defer to a Gemini→Groq LLM check; when no LLM is available the fallback is fail-closed for text carrying no hiring/assessment signal.
+*   **Why?** Ensures immediate, low-latency refusals for off-topic prompts or jailbreak attempts while still letting real (even vague) hiring queries through to the clarify flow.
 
 ### 6. Lifespan Pre-Warming
 *   **Design Choice:** The `lifespan` manager in `app/main.py` warms up the sentence-transformers model and loads the FAISS index during FastAPI startup.
